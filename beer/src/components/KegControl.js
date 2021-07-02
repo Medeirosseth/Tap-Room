@@ -1,14 +1,15 @@
 import React from "react";
 import newKegForm from "./newKegForm";
 import KegList from "./KegList";
-import Keg from "./Keg";
 
 class KegControl extends React.Component {
   constructor(props){
     super(props);
     this.state =  {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      masterKegList: []
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
     handleClick = () => {
@@ -17,14 +18,22 @@ class KegControl extends React.Component {
       }));
     }
 
+    handleAddingNewKegToList = (newKeg) => {
+      const newMasterKegList = this.state.masterKegList.concat(newKeg);
+      this.setState({masterKegList: newMasterKegList,
+        formVisibleOnPage: false})
+    }
+
+    
+
     render(){
       let currentVisibleState = null;
       let buttonText = null;
       if(this.currentVisibleState){
-        currentVisibleState = <newKegForm />;
+        currentVisibleState = <newKegForm  onNewKegCreation={this.handleAddingNewKegToList}/>;
         buttonText = "Return to Keg List";
       } else {
-        currentVisibleState = <KegList/>
+        currentVisibleState = <KegList kegList={this.state.masterKegList}/>
         buttonText = "Add Keg"
       }
       return (
