@@ -13,13 +13,20 @@ class KegControl extends React.Component {
 
     };
     this.handleClick = this.handleClick.bind(this);
-  }s
+  }
 
-    handleClick = () => {
+  handleClick = () => {
+    if (this.state.selectedKeg!= null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedKeg: null
+      });
+    } else {
       this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
+        formVisibleOnPage: !prevState.formVisibleOnPage,
       }));
     }
+  }
 
     handleAddingNewKegToList = (newKeg) => {
       const newMasterKegList = this.state.masterKegList.concat(newKeg);
@@ -31,6 +38,8 @@ class KegControl extends React.Component {
       const selectedKeg = this.state.masterKegList.filter(keg => keg.id == id)[0];
       this.setState({selectedKeg : selectedKeg})
     }
+
+    
     
 
     render(){
