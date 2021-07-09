@@ -1,7 +1,8 @@
-import React from "react";
-import newKegForm from "./newKegForm";
-import KegList from "./KegList";
+import React from 'react';
+import KegList from './KegList';
 import KegDetail from './KegDetail'
+import NewKegForm from './NewKegForm'
+
 
 class KegControl extends React.Component {
 
@@ -63,7 +64,7 @@ class KegControl extends React.Component {
       }
       else if (this.state.formVisibleOnPage) {
         currentlyVisibleState = 
-          <newKegForm 
+          <NewKegForm 
             onNewKegCreation={this.handleAddingNewKegToList}  />;
         buttonText = "Return to Keg List";
       } else {
