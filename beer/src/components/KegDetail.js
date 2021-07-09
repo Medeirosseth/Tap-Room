@@ -1,8 +1,9 @@
-import React from "react";
-import Keg from "./Keg";
-import PropTypes from "prop-types"
+import React from 'react';
+import Keg from './Keg';
+import PropTypes from 'prop-types';
 
 function KegDetail(props) {
+  
   return (
     <React.Fragment>
       <h1>Keg Detail will be here</h1>
