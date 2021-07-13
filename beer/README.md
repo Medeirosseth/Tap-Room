@@ -34,9 +34,9 @@ _This application allows users to create and update a list of kegs_
 </details>
 
 
-## Known Bugs :no_entry_sign: :bug:
+## Known Bugs :bug:
 
-* _None known_
+* _Stretch goal - complete edit functionality_
 
 ## License
 
