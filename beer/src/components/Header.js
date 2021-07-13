@@ -1,7 +1,11 @@
 import React from "react"
 
-export default function header(){
+function Header(){
   return (
-    <h1>TAP ROOM</h1>
-  )
+    <>
+      <h1>TAP ROOM</h1>
+    </>
+  );
 }
+
+export default Header;
